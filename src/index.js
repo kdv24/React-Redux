@@ -6,12 +6,9 @@ import SearchBar from './components/search_bar';
 
 const API_KEY = 'AIzaSyBLlgTWjW1PKSCPW_b4hf-kCgmWLhAiDEE';
 const twitter = new twitterAPI({
-  consumerKey: 'fill in ',
-  consumerSecret: 'fill in',
-  callback: 'url to route to'
-  // ? 'website: http://www.example.com'
-  // ? 'callback: http://example.com/twitter/callback'
-
+  consumerKey: consumerKey,
+  consumerSecret: consumerSecret,
+  callback: 'https://happyblinks.com/twitter/callback'
 });
 
 twitter.getRequestToken(function(error, requestToken, requestTokenSecret, results) {
@@ -30,7 +27,7 @@ twitter.getAccessToken(requestToken, requestTokenSecret, oauth_verifier, functio
   }
 });
 
-TwitterAPI({key: Twitter_API_KEY, term: 'surfboards' }, function(data) {
+twitterAPI({key: Twitter_API_KEY, term: 'surfboards' }, function(data) {
   console.log(data);
 });
 
