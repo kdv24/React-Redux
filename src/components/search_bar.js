@@ -18,7 +18,12 @@ class SearchBar extends Component {
     // return <input onChange={this.onInputChange} />; *refactored to:
     return (
       <div>
-        <input onChange={event => this.setState({ term: event.target.value })} />
+        <input
+          value={this.state.term}
+          // value only changes when state changes,
+          //when user types something it doesn't change the input value it only triggers an event
+          // value of input has not changed until render function is called again, which happens with onChange
+          onChange={event => this.setState({ term: event.target.value })} />
       </div>
     )
   }
