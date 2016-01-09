@@ -1,16 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import YTSearch from 'youtube-api-search'; //npm package
 import SearchBar from './components/search_bar';
-
 const API_KEY = 'AIzaSyBLlgTWjW1PKSCPW_b4hf-kCgmWLhAiDEE';
 
+
+// just an example to show api is working
+// YTSearch({key: API_KEY, term: 'surfboards'}, function(data) {
+//   console.log(data); //pass config options, callback option
+// });
+
 // Create new component to produce some HTML
-const App = () => { //this is creating a class 'App'
-  return (
-    <div>
-      <SearchBar />
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { videos: [] }; // array bc will contain list of videos
+
+    YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
+      this.setState({ videos }); //when key and property are same variable name, in E6 only have to list one and it becomes this.setState({videos: videos})
+      console.log(videos); //pass config options, callback option
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <SearchBar />
+      </div>
+    );
+  }
 }
 
 

@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 //   return <input /> // generates HTML input user can type text into
 // };
 
-// this is a class based component, adds greater functionality
+// this is a class based component; want to use whenever accessing state
 class SearchBar extends Component {
   constructor(props) {
     super(props); // super calls parent method of 'super'
