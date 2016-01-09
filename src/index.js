@@ -1,8 +1,22 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search'; //npm package
+import twitterAPI from 'twitter-api';
 import SearchBar from './components/search_bar';
+
 const API_KEY = 'AIzaSyBLlgTWjW1PKSCPW_b4hf-kCgmWLhAiDEE';
+const twitter = new twitterAPI({
+  consumerKey: 'fill in ',
+  consumerSecret: 'fill in',
+  callback: 'url to route to'
+  // ? 'website: http://www.example.com'
+  // ? 'callback: http://example.com/twitter/callback'
+
+});
+
+TwitterAPI({key: Twitter_API_KEY, term: 'surfboards' }, function(data) {
+  console.log(data);
+});
 
 
 // just an example to show api is working
